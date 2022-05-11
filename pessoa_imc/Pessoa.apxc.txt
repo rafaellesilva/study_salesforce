@@ -1,0 +1,19 @@
+public virtual class Pessoa {
+    
+    Public String name;
+    Public Decimal weight;
+    Public Integer age;
+    Public Decimal height;
+    
+    
+    public static Decimal calculoIMC(decimal weight, decimal height){
+        Decimal imc; 
+        imc = weight / (Math.pow((Double)height,2));
+            
+        return imc;
+        
+        
+    }
+
+
+}

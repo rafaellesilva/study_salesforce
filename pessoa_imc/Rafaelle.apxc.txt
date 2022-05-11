@@ -1,0 +1,13 @@
+public class Rafaelle extends Pessoa {
+   
+    public Rafaelle() {
+        this.name = 'Rafaelle C. S. da Silva';
+        this.weight = 55;
+        this.age = 19;
+        this.height = 1.52;
+        
+    }
+    
+    
+
+}
