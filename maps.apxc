@@ -1,0 +1,154 @@
+map<string,string> felideos = new map<string,string>();
+
+    felideos.put('Gto','Gato');
+    felideos.put('Onc','Onça');
+    felideos.put('Tgr','Tigre');
+    felideos.put('Leo','Leão');
+    
+map<string,string> cetaceos = new map<string,string>();
+
+    cetaceos.put('BaA','Baleia Azul');
+    cetaceos.put('BaO','Baleia Orca');
+    cetaceos.put('Gol','Golfinho');
+
+map<string,string> canideos = new map<string,string>();
+
+    canideos.put('Lob','Lobo');
+    canideos.put('Cac','Cachorro');
+    canideos.put('Coi',' Coiote');
+
+map<string,string> outros = new map<string,string>();
+
+    outros.put('Boi','Boi');
+    outros.put('Cvl','Cavalo');
+    outros.put('Prc','Porco');
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Map<String, Map<String, String>> general = new Map<String, Map<String, String>>();
+	general.put('felideos', felideos);
+	general.put('cetaceos', cetaceos);
+	general.put('canideos', canideos);
+	general.put('outros', outros);
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*for(String key: general.keySet()){
+    System.debug('key: ' + key + '  Value: ' + general.get(key));
+}*/
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+list<string> todosAnimais = new list<string>();
+	todosAnimais.addAll(felideos.values());
+	todosAnimais.addAll(cetaceos.values());
+	todosAnimais.addAll(canideos.values());
+	todosAnimais.addAll(outros.values());
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+list<string> domes = new list<string>();
+
+list<string> aqua = new list<string>();
+
+list<string> sel = new list<string>();
+
+list<string> carn = new list<string>();
+
+list<string> herb = new list<string>();
+
+list<string> oniv = new list<string>();
+
+for(string name_animal : todosAnimais){
+    if (name_animal == 'Gato' || name_animal == 'Cachorro' || name_animal == 'Golfinho' || name_animal == 'Baleia Orca' || name_animal == 'Boi' || name_animal == 'Porco' || name_animal == 'Cavalo'){
+		domes.add('Gato');
+        domes.add('Cachorro');
+        domes.add('Golfinho');
+        domes.add('Baleia Orca');
+        domes.add('Boi');
+        domes.add('Porco');
+        domes.add('Cavalo');
+    }
+	if (name_animal == 'Baleia Azul' || name_animal == 'Baleia Orca' || name_animal == 'Golfinho'){
+        aqua.add('Baleia Azul');
+        aqua.add('Baleia Orca');
+        aqua.add('Golfinho');  
+    }
+    if (name_animal == 'Onça' || name_animal == 'Tigre' || name_animal == 'Leão' || name_animal == 'Baleia Azul' || name_animal == 'Lobo' || name_animal == 'Coiote'){
+        sel.add('Onça');
+        sel.add('Tigre');
+        sel.add('Leão');
+        sel.add('Baleia Azul');
+        sel.add('Lobo');
+        sel.add('Coiote');
+    }
+    
+   if (name_animal == 'Onça' || name_animal == 'Tigre' || name_animal == 'Leão' || name_animal == 'Gato' || name_animal == 'Baleia Orca' || name_animal == 'Golfinho' || name_animal == 'Lobo' || name_animal == 'Coiote'){
+       	carn.add('Onça');
+       	carn.add('Tigre');
+       	carn.add('Leão');
+		carn.add('Gato');
+		carn.add('Baleia Orca');
+		carn.add('Golfinho');
+		carn.add('Lobo');
+		carn.add('Coiote');    
+    }
+    if (name_animal == 'Cachorro' || name_animal == 'Porco'){
+        herb.add('Cachorro');
+        herb.add('Porco');
+    }
+    if (name_animal == 'Baleia Azul' || name_animal == 'Boi' || name_animal == 'Cavalo'){
+        oniv.add('Baleia Azul');
+        oniv.add('Boi');
+        oniv.add('Cavalo');    
+    }
+}
+
+// Remove values duplicates in lists ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Set<String> setDomes = new Set<String>();
+Set<String> setAqua = new Set<String>();
+Set<String> setSel = new Set<String>();
+Set<String> setCarn = new Set<String>();
+Set<String> setHerb = new Set<String>();
+Set<String> setOniv = new Set<String>();
+
+List<String> domesticavel = new List<String>();
+List<String> aquaticos = new List<String>();
+List<String> selvagens = new List<String>();
+List<String> carnivoros = new List<String>();
+List<String> herbivoros = new List<String>();
+List<String> onivoros = new List<String>();
+
+setDomes.addAll(domes);
+domesticavel.addAll(setDomes);
+
+setAqua.addAll(aqua);
+aquaticos.addAll(setAqua);
+
+setSel.addAll(sel);
+selvagens.addAll(setSel);
+
+setCarn.addAll(carn);
+carnivoros.addAll(setCarn);
+
+setHerb.addAll(herb);
+herbivoros.addAll(setHerb);
+
+setOniv.addAll(oniv);
+onivoros.addAll(setOniv);
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+map<string, List<string>> mapaAgrupamentosAnimais = new map<string, List<string>>();
+
+	mapaAgrupamentosAnimais.put('domesticavel', domesticavel);
+	mapaAgrupamentosAnimais.put('aquaticos', aquaticos);
+	mapaAgrupamentosAnimais.put('selvagens', selvagens);
+	mapaAgrupamentosAnimais.put('carnivoros', carnivoros);
+	mapaAgrupamentosAnimais.put('herbivoros', herbivoros);
+	mapaAgrupamentosAnimais.put('onivoros', onivoros);
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+for(String key: mapaAgrupamentosAnimais.keySet()){
+    System.debug(key  + mapaAgrupamentosAnimais.get(key));
+}
