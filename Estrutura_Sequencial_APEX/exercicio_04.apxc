@@ -1,0 +1,12 @@
+Integer a = 10;
+Integer b = 5;
+Integer maior;
+
+
+if (a > b) {
+    maior = a;    
+} else {
+    maior = b;
+ 
+}
+system.debug('O maior entre ' + a + ' e ' + b + ' é o valor: ' + maior);

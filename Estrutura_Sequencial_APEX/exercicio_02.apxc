@@ -1,0 +1,3 @@
+integer value = 20;
+
+system.debug('O valor é: '+ value);

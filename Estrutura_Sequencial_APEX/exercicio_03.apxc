@@ -1,0 +1,5 @@
+integer number_one = 20;
+integer number_two = 50;
+integer soma = number_one + number_two;
+
+system.debug('A soma entre: ' + number_one + ' e ' + number_two + ' é igual a: ' + soma );
