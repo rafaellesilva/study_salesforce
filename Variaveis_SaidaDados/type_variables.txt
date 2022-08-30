@@ -1,0 +1,10 @@
+Integer numberInteger = 10;
+String firstName = 'Rafaelle';
+Boolean checkList = True;
+Decimal account = 10.66;
+
+system.debug(numberInteger);
+system.debug(firstName);
+system.debug(checkList);
+system.debug(account);
+     
